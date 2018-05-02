@@ -18,17 +18,17 @@ Ngoại lệ là tệp `.mylogin.cnf` chứa các tùy chọn đường dẫn đ
 ích [mysql_config_editor](https://dev.mysql.com/doc/refman/5.7/en/mysql-config-editor.html).
 Xem [Section 4.6.6, “mysql_config_editor — MySQL Configuration Utility”](https://dev.mysql.com/doc/refman/5.7/en/mysql-config-editor.html).
 Một "đường dẫn đăng nhập" là nhóm tùy chọn chỉ cho phép một số tùy chọn nhất định:
- host, user, password, port and socket. Chương trình client chỉ định đường dẫn đăng nhập nào cần đọc từ `.mylogin.cnf` bằng cách sử dụng tùy chọn `--login-path`.
+ host, user, password, port và socket. Chương trình client chỉ định đường dẫn đăng nhập nào cần đọc từ `.mylogin.cnf` bằng cách sử dụng tùy chọn `--login-path`.
 
 Để chỉ định tên tệp đường dẫn đăng nhập thay thế, hãy đặt biến môi trường `MYSQL_TEST_LOGIN_FILE`.
-Biến này được sử dụng bởi tiện ích kiểm tra `mysql-test-run.pl`, nhưng cũng được nhận biết bởi `mysql_config_editor `
+Biến này được sử dụng bởi tiện ích kiểm thử `mysql-test-run.pl`, nhưng cũng được nhận biết bởi `mysql_config_editor `
 và bởi các MySQL Client như mysql, mysqladmin và vv.
 
-MySQL tìm kiếm các tệp tùy chọn theo thứ tự được mô tả trong phần thảo luận sau và đọc bất kỳ tệp nào tồn tại. Nếu một tệp tùy chọn bạn muốn sử dụng không tồn tại,
+MySQL tìm kiếm các tệp tùy chọn theo thứ tự được mô tả trong phần thảo luận sau và đọc bất kỳ tệp nào tồn tại. Nếu một tệp tùy chọn bạn muốn sử dụng không còn tồn tại,
 hãy tạo nó bằng cách sử dụng phương thức thích hợp, như mới được thảo luận.
 
 > Chú ý: Các tệp tùy chọn được sử dụng với các chương trình NDB Cluster được trình
-bày trong [Section 21.3, “Configuration of NDB Cluster”](https://dev.mysql.com/doc/refman/5.7/en/mysql-cluster-configuration.html).
+bày trong [Mục 21.3, “Cấu hình của NDB Cluster”](https://dev.mysql.com/doc/refman/5.7/en/mysql-cluster-configuration.html).
 
 Trong Windows, chương trình MySQL đọc lựa chọn khởi động từ những tệp hiển thị
 trong bảng dưới đây, theo thứ tự được chỉ định (các tệp được liệt kê đầu tiên được đọc trước tiên, rồi dần tiếp đến các file đằng sau)
