@@ -1,4 +1,4 @@
-### 4.2.6 Using Option Files
+### 4.2.6 Sử dụng các file tuỳ chọn
 Hầu hết chương trình MySQL có thể đọc các tùy chọn khởi động từ các tệp tùy chọn
 (nhiều khi được gọi là tệp cấu hình). Tệp tùy chọn cung cấp một cách thuận tiện để
 chỉ định các lựa chọn thường được sử dụng để chúng không cần nhập vào dòng lệnh 
@@ -10,7 +10,7 @@ dụng `--verbose` và `--help`). Nếu chương trình đọc các tệp tùy c
 giúp cho biết tệp nào sẽ hiển thị và nhóm tùy chọn nào sẽ nhận ra.
 
 > Chú ý:
-> Một chương trình MySQL bắt đầu với tùy chọn `--no-default` đọc các file  không 
+> Một chương trình MySQL bắt đầu với tùy chọn `--no-default` không 
 đọc các tệp tùy chọn nào khác ngoài `.mylogin.cnf`.
 
 Nhiều tệp tùy chọn là các tệp văn bản thuần túy, được tạo bằng bất kỳ trình soạn thảo văn bản nào.
@@ -79,13 +79,11 @@ Trên các hệ thống giống Unix và Unix, các chương trình MySQL đọc
 | `~/.my.cnf`             | Các tùy chọn riêng cho người dùng                                        |  
 | `~/.mylogin.cnf`        | Các tùy chọn đường dẫn đăng nhập riêng cho người dùng (chỉ cho các máy khách)               | 
 
-Trong bảng trước, `~` đại diện cho thư mục home của người dùng hiện tại (giá trị của $ HOME).
+Trong bảng trước, `~` đại diện cho thư mục home của người dùng hiện tại (giá trị của $HOME).
 
-`SYSCONFDIR` đại diện cho thư mục được chỉ định với tùy chọn [SYSCONFDIR](https://dev.mysql.com/doc/refman/5.7/en/source-configuration-options.html#option_cmake_sysconfdir)
- cho **CMake** khi MySQL được xây dựng. Theo mặc định, đây là thư mục etc nằm trong thư mục cài đặt đã biên dịch.
+`SYSCONFDIR` đại diện cho thư mục được chỉ định với tùy chọn [SYSCONFDIR](https://dev.mysql.com/doc/refman/5.7/en/source-configuration-options.html#option_cmake_sysconfdir) cho **CMake** khi MySQL được xây dựng. Theo mặc định, đây là thư mục etc nằm trong thư mục cài đặt đã biên dịch.
  
- `MYSQL_HOME` là một biến môi trường chứa đường dẫn đến thư mục chứa tệp `my.cnf` cụ thể của máy chủ. Nếu MYSQL_HOME không được thiết lập và bạn khởi động máy chủ bằng chương 
- trình [mysqld_safe](https://dev.mysql.com/doc/refman/5.7/en/mysqld-safe.html), [mysqld_safe](https://dev.mysql.com/doc/refman/5.7/en/mysqld-safe.html) đặt nó thành **BASEDIR**, thư mục cài đặt cơ sở MySQL.
+ `MYSQL_HOME` là một biến môi trường chứa đường dẫn đến thư mục chứa tệp `my.cnf` cụ thể của máy chủ. Nếu MYSQL_HOME không được thiết lập và bạn khởi động máy chủ bằng chương trình [mysqld_safe](https://dev.mysql.com/doc/refman/5.7/en/mysqld-safe.html), [mysqld_safe](https://dev.mysql.com/doc/refman/5.7/en/mysqld-safe.html) đặt nó thành **BASEDIR**, thư mục cài đặt cơ sở MySQL.
  
  `DATADIR` thường là / usr / local / mysql / data, mặc dù điều này có thể thay đổi theo từng nền tảng hoặc phương pháp cài đặt. Giá trị là vị trí thư mục dữ liệu được xây dựng trong khi MySQL được biên soạn, 
  không phải là vị trí được chỉ định với tùy chọn `--datadir` khi mysqld bắt đầu. Sử dụng `--datadir` khi chạy không ảnh hưởng đến nơi máy chủ tìm kiếm các tệp tùy chọn mà nó đọc trước khi xử lý bất kỳ tùy chọn nào.
